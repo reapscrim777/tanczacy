@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniec!</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #wielkiGif {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="wielkiGif" src="1.gif" alt="Dancing GIF">
+
+    <script>
+        // Tutaj wpisz nazwy swoich plików z folderu
+        const gify = ['1.gif', '2.gif', '3.gif'];
+        let aktualnyIndex = 0;
+        const gifElement = document.getElementById('wielkiGif');
+
+        function zmienGif() {
+            aktualnyIndex++;
+            if (aktualnyIndex >= gify.length) {
+                aktualnyIndex = 0;
+            }
+            gifElement.src = gify[aktualnyIndex];
+        }
+
+        // Zmienia GIF co 3000 milisekund (3 sekundy)
+        setInterval(zmienGif, 3000);
+    </script>
+
+</body>
+</html>
